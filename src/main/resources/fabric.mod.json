@@ -3,16 +3,17 @@
   "id": "ultraboost",
   "version": "${version}",
   "name": "UltraBoost",
-  "description": "A lightweight FPS and smoothness booster for Minecraft Fabric 1.21.6.",
+  "description": "A lightweight FPS and smoothness booster for Fabric 1.21.6 with culling, particle limiting, render tuning, and smart optimization.",
   "authors": [
     "UltrXScottX"
   ],
+  "contact": {
+    "homepage": "https://github.com/UltrXScottX/ultraboost",
+    "sources": "https://github.com/UltrXScottX/ultraboost"
+  },
   "license": "MIT",
   "environment": "client",
   "entrypoints": {
-    "main": [
-      "com.ultraxscott.ultraboost.UltraBoost"
-    ],
     "client": [
       "com.ultraxscott.ultraboost.UltraBoostClient"
     ],
@@ -32,5 +33,11 @@
   "recommends": {
     "cloth-config": "*",
     "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ "Client" ],
+      "parent": "fabric"
+    }
   }
 }

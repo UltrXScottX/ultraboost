@@ -33,6 +33,10 @@ dependencies {
     modCompileOnly "me.shedaniel.cloth:cloth-config-fabric:18.0.142"
 }
 
+loom {
+    accessWidenerPath = file("src/main/resources/ultraboost.accesswidener")
+}
+
 tasks.withType(JavaCompile).configureEach {
     it.options.release = 21
 }

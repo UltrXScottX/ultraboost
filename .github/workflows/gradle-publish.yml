@@ -1,11 +1,10 @@
-
 name: VioletVoid Gradle Build
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
   pull_request:
-    branches: [main]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
@@ -23,10 +22,11 @@ jobs:
           distribution: temurin
           cache: gradle
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
       - name: Build Fabric Mod
-        run: |
-          chmod +x gradlew
-          ./gradlew clean build
+        run: gradle clean build
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
@@ -34,4 +34,3 @@ jobs:
           name: VioletVoid-PvP-Mod
           path: build/libs/*.jar
           if-no-files-found: error
-          
